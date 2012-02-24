@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Datapublic Blog feature.
+ */
+
+include_once('datapublic_blog.features.inc');
