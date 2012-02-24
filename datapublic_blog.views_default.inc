@@ -142,33 +142,6 @@ function datapublic_blog_views_default_views() {
   $handler->display->display_options['fields']['nid']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nid']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['nid']['link_to_node'] = 0;
-  /* Field: Content: Comment count */
-  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
-  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['label'] = '';
-  $handler->display->display_options['fields']['comment_count']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['comment_count']['alter']['make_link'] = 1;
-  $handler->display->display_options['fields']['comment_count']['alter']['path'] = 'node/[nid]#comments';
-  $handler->display->display_options['fields']['comment_count']['alter']['absolute'] = 1;
-  $handler->display->display_options['fields']['comment_count']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['comment_count']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['comment_count']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['comment_count']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['comment_count']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['comment_count']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['comment_count']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['comment_count']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['comment_count']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['comment_count']['element_default_classes'] = 0;
-  $handler->display->display_options['fields']['comment_count']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['comment_count']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['comment_count']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['comment_count']['format_plural'] = 1;
-  $handler->display->display_options['fields']['comment_count']['format_plural_singular'] = '1 comment';
-  $handler->display->display_options['fields']['comment_count']['format_plural_plural'] = '@count comments';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -271,20 +244,18 @@ function datapublic_blog_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'More Blog Posts...';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['path'] = 'blog';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Blog';
   $handler->display->display_options['menu']['description'] = 'Blog';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
 
   /* Display: Block: Homepage */
   $handler = $view->new_display('block', 'Block: Homepage', 'block_1');
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
-  $handler->display->display_options['use_more_text'] = 'More Blog Posts...';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -442,7 +413,6 @@ function datapublic_blog_views_default_views() {
   /* Display: Page: Archive */
   $handler = $view->new_display('page', 'Page: Archive', 'page_1');
   $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'More Blog Posts...';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Created year */
   $handler->display->display_options['arguments']['created_year']['id'] = 'created_year';
@@ -464,7 +434,6 @@ function datapublic_blog_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Archive by date';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'More Blog Posts...';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'page_1';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -570,7 +539,7 @@ function datapublic_blog_views_default_views() {
   $handler->display->display_options['fields']['nid']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nid']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['nid']['link_to_node'] = 0;
-  /* Field: Content: Comment count */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
@@ -594,9 +563,6 @@ function datapublic_blog_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['hide_empty'] = 0;
   $handler->display->display_options['fields']['comment_count']['empty_zero'] = 0;
   $handler->display->display_options['fields']['comment_count']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['comment_count']['format_plural'] = 1;
-  $handler->display->display_options['fields']['comment_count']['format_plural_singular'] = '1 comment';
-  $handler->display->display_options['fields']['comment_count']['format_plural_plural'] = '@count comments';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -665,6 +631,38 @@ function datapublic_blog_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
   $handler->display->display_options['path'] = 'blog/feed';
+  $translatables['blog'] = array(
+    t('Master'),
+    t('Blog'),
+    t('More Blog Posts...'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('by [field_blog_author]'),
+    t('on [created]'),
+    t('[created] | [comment_count]'),
+    t('Read more...'),
+    t('Page'),
+    t('Block: Homepage'),
+    t('[field_blog_author] -'),
+    t('[field_blog_author] [created]'),
+    t('Blog: Homepage Block'),
+    t('Page: Archive'),
+    t('All'),
+    t('Blog Posts for %1'),
+    t('Block: Archive'),
+    t('Archive by date'),
+    t('node/[nid]#comments'),
+    t('[field_blog_author] [created] | [comment_count]'),
+    t('Blog: Archive Block'),
+    t('Feed'),
+    t('more'),
+  );
   $export['blog'] = $view;
 
   $view = new view;
@@ -723,6 +721,18 @@ function datapublic_blog_views_default_views() {
   /* Display: Block: Categories */
   $handler = $view->new_display('block', 'Block: Categories', 'block');
   $handler->display->display_options['block_description'] = 'Blog: Categories Block';
+  $translatables['blog_categories'] = array(
+    t('Master'),
+    t('Blog categories'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Block: Categories'),
+    t('Blog: Categories Block'),
+  );
   $export['blog_categories'] = $view;
 
   return $export;
