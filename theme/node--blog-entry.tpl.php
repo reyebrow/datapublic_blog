@@ -78,37 +78,33 @@
  * @see template_process()
  */
 
-  // Prepare variables, hide fields:
-  global $language;
-  $langcode = $language->language;
-  $timezone = variable_get('date_default_timezone', 0);
+  // Hide a few fields:
   hide($content['field_blog_author']);
   hide($content['field_blog_show_author_info']);
   hide($content['field_blog_terms']);
 ?>
 <article id="node-<?php print $node->nid; ?>" class=" <?php print $classes; ?>"<?php print $attributes; ?>>
-	
   <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+  <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
   <?php endif; ?>
 
-	<div class="subheader"> 
-    <?php 
-      if($content['field_blog_show_author_info']) {
-        $output = render($content['field_blog_author']);
-      }
-      $output .= format_date($node->created, $type = 'custom', $format = 'F j, Y', $timezone, $langcode);
-      $output .= ' | ' . l(format_plural($node->comment_count, '1 comment', '@count comments'), drupal_get_destination(), array('fragment' => 'comments', 'language' => $language)); 
-      print $output;
-    ?>
-	</div>
-	<?php print render($content['body']); ?>
+  <div class="subheader"> 
+    <?php if ($field_blog_show_author_info[$language][0]['value'] != 0): ?>
+    <?php print render($field_blog_author); ?>
+    <?php endif; ?>
+    <?php print render(format_date($created)); ?>
+    <?php if (module_exists('comment') && $comment_count > 0): ?>
+    | <?php print l(format_plural($comment_count, '1 comment', '@count comments'), current_path(), array('fragment' => 'comments')); ?>
+    <?php endif; ?>
+  </div>
+
+  <?php print render($content['body']); ?>
 
   <?php if (!empty($content['field_blog_terms']) || !empty($content['links'])): ?>
-    <footer>
-      <?php print render($content['field_blog_terms']); ?>
-      <?php print render($content['links']); ?>
-    </footer>
+  <footer>
+    <?php print render($content['field_blog_terms']); ?>
+    <?php print render($content['links']); ?>
+  </footer>
   <?php endif; ?>
   <?php print render($content['comments']); ?>
 </article> <!-- /.node -->
