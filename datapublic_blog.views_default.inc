@@ -648,6 +648,7 @@ function datapublic_blog_views_default_views() {
     t('[created] | [comment_count]'),
     t('Read more...'),
     t('Page'),
+    t('more'),
     t('Block: Homepage'),
     t('[field_blog_author] -'),
     t('[field_blog_author] [created]'),
@@ -661,7 +662,6 @@ function datapublic_blog_views_default_views() {
     t('[field_blog_author] [created] | [comment_count]'),
     t('Blog: Archive Block'),
     t('Feed'),
-    t('more'),
   );
   $export['blog'] = $view;
 
@@ -685,7 +685,7 @@ function datapublic_blog_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
