@@ -12,7 +12,7 @@ function datapublic_blog_views_default_views() {
 
   $view = new view;
   $view->name = 'blog';
-  $view->description = 'Blog Entry listings';
+  $view->description = 'Default views for Blog Entry listings.';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Blog';
@@ -667,7 +667,7 @@ function datapublic_blog_views_default_views() {
 
   $view = new view;
   $view->name = 'blog_categories';
-  $view->description = 'Blog categories listing';
+  $view->description = 'Default listing for blog categories.';
   $view->tag = 'default';
   $view->base_table = 'taxonomy_term_data';
   $view->human_name = 'Blog categories';
