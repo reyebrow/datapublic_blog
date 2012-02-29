@@ -69,7 +69,7 @@ function datapublic_blog_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
-            'trim_length' => 600,
+            'trim_length' => '600',
           ),
           'type' => 'text_summary_or_trimmed',
           'weight' => 0,
@@ -80,15 +80,15 @@ function datapublic_blog_field_default_fields() {
       'label' => 'Body',
       'required' => FALSE,
       'settings' => array(
-        'display_summary' => TRUE,
-        'text_processing' => 1,
+        'display_summary' => 'TRUE',
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'module' => 'text',
         'settings' => array(
-          'rows' => 20,
-          'summary_rows' => 5,
+          'rows' => '20',
+          'summary_rows' => '5',
         ),
         'type' => 'text_textarea_with_summary',
         'weight' => 0,
@@ -173,7 +173,7 @@ function datapublic_blog_field_default_fields() {
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 1,
+        'active' => '1',
         'module' => 'node_reference',
         'settings' => array(
           'autocomplete_match' => 'contains',
@@ -255,10 +255,10 @@ function datapublic_blog_field_default_fields() {
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 1,
+        'active' => '1',
         'module' => 'options',
         'settings' => array(
-          'display_label' => 1,
+          'display_label' => '1',
         ),
         'type' => 'options_onoff',
         'weight' => '3',
@@ -344,7 +344,7 @@ function datapublic_blog_field_default_fields() {
         'module' => 'options',
         'settings' => array(
           'autocomplete_path' => 'taxonomy/autocomplete',
-          'size' => 60,
+          'size' => '60',
         ),
         'type' => 'options_select',
         'weight' => '4',
