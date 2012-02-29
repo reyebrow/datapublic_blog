@@ -1,0 +1,18 @@
+<?php
+/**
+ * Implements hook_install()
+ */
+
+function datapublic_blog_install() {
+  /** 
+   * Exportables is not yet implemented in the Alpha1 version of custom_breadcrumbs
+   * So we're going to write directly to the database on install
+   **/
+  if (function_exists('custom_breadcrumbs_save_breadcrumb')) {    
+    $breadcrumb->paths = array('blog','<none>');
+    $breadcrumb->titles = array('Blog','[node:title]');
+    $breadcrumb->node_type = 'blog_entry';
+    $breadcrumb->visibility_php = NULL;
+    custom_breadcrumbs_save_breadcrumb($breadcrumb);
+  }
+}
